@@ -3,6 +3,10 @@ import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import AddItemForm from "./AddItemForm";
+import {AppBar, Container, Grid, Paper, Toolbar, Typography} from "@mui/material";
+import IconButton from "@mui/material/IconButton/IconButton";
+import {Menu} from "@mui/icons-material";
+import Button from "@mui/material/Button/Button";
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistType = {
@@ -109,7 +113,27 @@ function App() {
     }
     return (
         <div className="App">
+            <AppBar position={"static"}>
+              <Toolbar>
+                  <IconButton
+                      edge={'start'}
+                      color={'inherit'}
+                      aria-label={'menu'}
+                  >
+                      <Menu/>
+                      <Typography variant={'h6'} style={{ marginLeft: '20px' }}>
+                          Todolist
+                      </Typography>
+                      <Button style={{ marginLeft: '20px' }} color={'inherit'}>Login</Button>
+                  </IconButton>
+              </Toolbar>
+            </AppBar>
+           <Container fixed>
+               <Grid container style={{padding:'20px'}}>
             <AddItemForm callBack={addTodolist}/>
+               </Grid>
+           <Grid container spacing={3}>
+            <div className={"todolists"}>
             {
                 todolists.map(tl => {
                     let allTodolistTasks = tasks[tl.id];
@@ -122,7 +146,9 @@ function App() {
                         tasksForTodolist = allTodolistTasks.filter(t => t.isDone === true);
                     }
 
-                    return <Todolist
+                    return <Grid item>
+                        <Paper style={{padding:'10px'}}>
+                        <Todolist
                         key={tl.id}
                         id={tl.id}
                         title={tl.title}
@@ -136,9 +162,14 @@ function App() {
                         updateTodoTitle={updateTodoTitle}
                         removeTodolist={removeTodolist}
                     />
+                        </Paper>
+                    </Grid>
                 })
             }
 
+        </div>
+           </Grid>
+           </Container>
         </div>
     );
 }
