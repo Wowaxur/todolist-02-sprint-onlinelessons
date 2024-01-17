@@ -2,28 +2,21 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.todolists{
   gap: 20px;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
 }
+
 .App > div {
-  margin-right: 50px;
 }
-.addList{
-  text-align: center;
+.Todolists{
+
+}
+.AddTodo{
+
 }
 .error {
   border: red 1px solid;
 }
-.Todolist{
 
-
-}
 .error-message {
   color: red;
 }
