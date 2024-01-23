@@ -1,4 +1,4 @@
-import {TaskType, TestTasksType} from "../Todolist";
+import {TestTasksType} from "../Todolist";
 import {v1} from "uuid";
 
 
