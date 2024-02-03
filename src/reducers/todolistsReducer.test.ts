@@ -68,7 +68,7 @@ test('correct filter of todolist should be changed', () => {
 
     const startState: Array<TodolistType> = [
         {id: todolistId1, title: 'What to learn', filter: 'all'},
-        {id: todolistId2, title: 'What to buy', filter: 'all'}
+        {id: todolistId2, title: 'What to buy',  filter: 'all'}
     ]
 
     const action = {
@@ -82,3 +82,4 @@ test('correct filter of todolist should be changed', () => {
     expect(endState[0].filter).toBe('all')
     expect(endState[1].filter).toBe(newFilter)
 })
+
