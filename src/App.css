@@ -1,18 +1,13 @@
-
+/*
 .App {
+  padding: 30px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .App > div {
+  margin-right: 50px;
 }
-.Todolists{
-display: flex;
-}
-.AddTodo{
 
-}
 .error {
   border: red 1px solid;
 }
@@ -28,4 +23,4 @@ display: flex;
 .is-done {
   opacity: 0.5;
 }
-
+*/
